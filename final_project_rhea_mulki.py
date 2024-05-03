@@ -31,7 +31,7 @@ def fetch_santa_barbara_coordinates():
 # Load the datasets
 df = pd.read_csv("images.csv")
 deployments_df = pd.read_csv("deployments.csv")
-temperature_df = pd.read_csv("data.csv")  # New: Read temperature data from data.csv
+temperature_df = pd.read_csv("data.csv")  
 
 # Convert timestamp to datetime with error handling
 df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
