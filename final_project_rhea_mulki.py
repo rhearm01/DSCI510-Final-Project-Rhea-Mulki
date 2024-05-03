@@ -72,7 +72,7 @@ for level, values in taxonomy_filters.items():
         filtered_df = filtered_df[filtered_df[level].isin(values)]
 filtered_df = filtered_df[(filtered_df['index'] >= index_range[0]) & (filtered_df['index'] <= index_range[1])]
 
-# Show the filtered data
+# Show the filtered data (images table)
 st.title("Images Table")
 st.write(filtered_df)
 
