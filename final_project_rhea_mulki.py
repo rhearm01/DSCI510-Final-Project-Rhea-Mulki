@@ -44,96 +44,61 @@ df['index'] = df.index
 
 # Function to generate visualizations
 def generate_visualizations(filtered_df):
-    st.write("""
-1. **Your name:**  
-    Rhea Ranjit Mulki
+    # Bar Chart of Class Distribution
+    st.subheader("Class Distribution")
+    class_counts = filtered_df['class'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=class_counts.index, y=class_counts.values, palette='muted')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Class")
+    plt.ylabel("Count")
+    st.pyplot(plt)
 
-2. **Explanation of how to use the webapp:**  
-    **Objective:**  
-    Investigating species diversity and richness in coastal habitats through camera trap observations and analyzing the influence of environmental variables, such as climate and habitat characteristics, on wildlife distribution patterns.  
+    # Bar Chart of Species Distribution
+    st.subheader("Species Distribution")
+    species_counts = filtered_df['species'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=species_counts.index, y=species_counts.values, palette='viridis')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Species")
+    plt.ylabel("Count")
+    st.pyplot(plt)
 
-    **Interactivity:**  
-    The Streamlit app provides various interactive features to explore the wildlife camera trap data:  
-    - Filter Options: Users can filter the dataset based on species name and taxonomic levels (class, order, family, genus, species).  
-    - Index Range Slider: Allows users to select a specific range of indices to display rows from the images table, facilitating focused exploration of the dataset.  
-    - Sidebar Information: Provides additional context and explanations about the project overview, conclusions, challenges faced, desired skills for improvement, future expansion plans, dataset descriptions, and visualizations.  
+    # Bar Chart of Common Name Distribution
+    st.subheader("Common Name Distribution")
+    common_name_counts = filtered_df['common_name'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=common_name_counts.index, y=common_name_counts.values, palette='pastel')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Common Name")
+    plt.ylabel("Count")
+    st.pyplot(plt)
 
-    **Visualizations:**  
-    - Species Distribution: This bar chart shows the distribution of different species observed in the wildlife camera trap data. It helps in understanding the relative abundance of various species in the study area.  
-    - Class Distribution: This bar chart illustrates the distribution of species across different taxonomic classes, such as mammals, birds, and reptiles. It provides insights into the overall composition of wildlife in the dataset.  
-    - Common Name Distribution: This bar chart displays the distribution of species based on their common names. It offers a more familiar perspective on the observed wildlife, highlighting frequently encountered species.  
-    - Timestamp Distribution: This histogram depicts the distribution of observations over time. It allows for the identification of temporal patterns in wildlife activity and can reveal peak periods of species presence.  
-    - Map of Observations: This interactive map visualizes the spatial distribution of camera trap deployments. It enables users to explore the geographic locations of wildlife observations and identify hotspot areas.  
-    - Taxonomic Classification: These pie charts represent the taxonomic classification of observed species at different levels, such as class, order, family, genus, and species. They provide a hierarchical view of species diversity in the dataset.  
+    # Histogram of Timestamps
+    st.subheader("Timestamp Distribution")
+    plt.figure(figsize=(10, 6))
+    sns.histplot(filtered_df['timestamp'], bins=20, kde=True, color='skyblue')
+    plt.xlabel("Timestamp")
+    plt.ylabel("Count")
+    st.pyplot(plt)
 
-    **Conclusions:**  
-    - Most commonly observed classes of species are Mammalia, Aves, and Reptilia.  
-    - Within Mammalia, the most common orders are Carnivore, Cetartiodactyla, and Rodentia. Within Aves, the most common orders are Charadriiformes, Pelecaniformes, and Cathartiformes. Reptiles observed belong to the Squamata order.  
-    - The most common mammals observed include Coyote, Wild Boar, and Mule Deer. The most common birds observed include Glaucous-winged Gull, California Gull, and Turkey Vulture. Reptiles observed include Western Fence Lizard and Common Gartersnake.  
-    - Human presence was also captured by the cameras.  
+    # Map of Observations using latitude and longitude from deployments.csv
+    st.subheader("Map of Observations")
+    if 'latitude' in deployments_df.columns and 'longitude' in deployments_df.columns:
+        st.map(deployments_df[['latitude', 'longitude']])
+    else:
+        st.warning("Latitude and longitude columns not found in deployments.csv")
 
-3. **Major "gotchas":**  
-    Experiencing difficulties in capturing climate and weather data posed a significant challenge during the course of Project ECOTONE. The objective was to establish relationships between wildlife behavior and habitat study based on environmental factors. However, obtaining precise climate data aligned with the timestamps in the dataset proved to be challenging.  
-
-    In response to this challenge, the project resorted to utilizing average temperature data for Santa Barbara County, CA. This decision was made due to the similarity of coordinates between the dataset and the Santa Barbara region. While this provided a workaround solution, it's acknowledged that more precise and comprehensive climate data would have strengthened the analysis and conclusions drawn from the project.
-""")
-    if not filtered_df.empty:
-        st.title("Visualizations")
-        # Bar Chart of Class Distribution
-        st.subheader("Class Distribution")
-        class_counts = filtered_df['class'].value_counts()
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x=class_counts.index, y=class_counts.values, palette='muted')
-        plt.xticks(rotation=45, ha='right')
-        plt.xlabel("Class")
-        plt.ylabel("Count")
+    # Pie Chart of Taxonomic Classification
+    st.subheader("Taxonomic Classification")
+    taxonomy_levels = ['class', 'order', 'family', 'genus', 'species']
+    for level in taxonomy_levels:
+        level_counts = filtered_df[level].value_counts()
+        plt.figure(figsize=(8, 8))
+        plt.pie(level_counts, labels=level_counts.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
+        plt.axis('equal')
+        plt.title(f"{level.capitalize()} Distribution")
         st.pyplot(plt)
-
-        # Bar Chart of Species Distribution
-        st.subheader("Species Distribution")
-        species_counts = filtered_df['species'].value_counts()
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x=species_counts.index, y=species_counts.values, palette='viridis')
-        plt.xticks(rotation=45, ha='right')
-        plt.xlabel("Species")
-        plt.ylabel("Count")
-        st.pyplot(plt)
-
-        # Bar Chart of Common Name Distribution
-        st.subheader("Common Name Distribution")
-        common_name_counts = filtered_df['common_name'].value_counts()
-        plt.figure(figsize=(10, 6))
-        sns.barplot(x=common_name_counts.index, y=common_name_counts.values, palette='pastel')
-        plt.xticks(rotation=45, ha='right')
-        plt.xlabel("Common Name")
-        plt.ylabel("Count")
-        st.pyplot(plt)
-
-        # Histogram of Timestamps
-        st.subheader("Timestamp Distribution")
-        plt.figure(figsize=(10, 6))
-        sns.histplot(filtered_df['timestamp'], bins=20, kde=True, color='skyblue')
-        plt.xlabel("Timestamp")
-        plt.ylabel("Count")
-        st.pyplot(plt)
-
-        # Map of Observations using latitude and longitude from deployments.csv
-        st.subheader("Map of Observations")
-        if 'latitude' in deployments_df.columns and 'longitude' in deployments_df.columns:
-            st.map(deployments_df[['latitude', 'longitude']])
-        else:
-            st.warning("Latitude and longitude columns not found in deployments.csv")
-
-        # Pie Chart of Taxonomic Classification
-        st.subheader("Taxonomic Classification")
-        taxonomy_levels = ['class', 'order', 'family', 'genus', 'species']
-        for level in taxonomy_levels:
-            level_counts = filtered_df[level].value_counts()
-            plt.figure(figsize=(8, 8))
-            plt.pie(level_counts, labels=level_counts.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
-            plt.axis('equal')
-            plt.title(f"{level.capitalize()} Distribution")
-            st.pyplot(plt)
 
 # Function to display research questions
 def display_research_questions():
@@ -184,11 +149,43 @@ def page_selection(filtered_df):
     st.title("Page Selection")
 
     # Create radio buttons to select the page
-    page = st.radio("Select Page", ("Visualizations", "Research Questions", "Data"))
+    page = st.radio("Select Page", ("Startup", "Research Questions", "Data", "Main App"))
 
     # Conditional rendering based on the selected page
-    if page == "Visualizations":
-        generate_visualizations(filtered_df)
+    if page == "Startup":
+        st.write("""
+1. **Your name:**  
+    Rhea Ranjit Mulki
+
+2. **Explanation of how to use the webapp:**  
+    **Objective:**  
+    Investigating species diversity and richness in coastal habitats through camera trap observations and analyzing the influence of environmental variables, such as climate and habitat characteristics, on wildlife distribution patterns.  
+
+    **Interactivity:**  
+    The Streamlit app provides various interactive features to explore the wildlife camera trap data:  
+    - Filter Options: Users can filter the dataset based on species name and taxonomic levels (class, order, family, genus, species).  
+    - Index Range Slider: Allows users to select a specific range of indices to display rows from the images table, facilitating focused exploration of the dataset.  
+    - Sidebar Information: Provides additional context and explanations about the project overview, conclusions, challenges faced, desired skills for improvement, future expansion plans, dataset descriptions, and visualizations.  
+
+    **Visualizations:**  
+    - Species Distribution: This bar chart shows the distribution of different species observed in the wildlife camera trap data. It helps in understanding the relative abundance of various species in the study area.  
+    - Class Distribution: This bar chart illustrates the distribution of species across different taxonomic classes, such as mammals, birds, and reptiles. It provides insights into the overall composition of wildlife in the dataset.  
+    - Common Name Distribution: This bar chart displays the distribution of species based on their common names. It offers a more familiar perspective on the observed wildlife, highlighting frequently encountered species.  
+    - Timestamp Distribution: This histogram depicts the distribution of observations over time. It allows for the identification of temporal patterns in wildlife activity and can reveal peak periods of species presence.  
+    - Map of Observations: This interactive map visualizes the spatial distribution of camera trap deployments. It enables users to explore the geographic locations of wildlife observations and identify hotspot areas.  
+    - Taxonomic Classification: These pie charts represent the taxonomic classification of observed species at different levels, such as class, order, family, genus, and species. They provide a hierarchical view of species diversity in the dataset.  
+
+    **Conclusions:**  
+    - Most commonly observed classes of species are Mammalia, Aves, and Reptilia.  
+    - Within Mammalia, the most common orders are Carnivore, Cetartiodactyla, and Rodentia. Within Aves, the most common orders are Charadriiformes, Pelecaniformes, and Cathartiformes. Reptiles observed belong to the Squamata order.  
+    - The most common mammals observed include Coyote, Wild Boar, and Mule Deer. The most common birds observed include Glaucous-winged Gull, California Gull, and Turkey Vulture. Reptiles observed include Western Fence Lizard and Common Gartersnake.  
+    - Human presence was also captured by the cameras.  
+
+3. **Major "gotchas":**  
+    Experiencing difficulties in capturing climate and weather data posed a significant challenge during the course of Project ECOTONE. The objective was to establish relationships between wildlife behavior and habitat study based on environmental factors. However, obtaining precise climate data aligned with the timestamps in the dataset proved to be challenging.  
+
+    In response to this challenge, the project resorted to utilizing average temperature data for Santa Barbara County, CA. This decision was made due to the similarity of coordinates between the dataset and the Santa Barbara region. While this provided a workaround solution, it's acknowledged that more precise and comprehensive climate data would have strengthened the analysis and conclusions drawn from the project.
+""")
     elif page == "Research Questions":
         display_research_questions()
     elif page == "Data":
@@ -215,6 +212,8 @@ def page_selection(filtered_df):
             "3. **data.csv**: Contains average temperature data for Santa Barbara County, CA, for the period April to March, for the years 2022 till 2024.\n"
             "4. **https://www.gps-coordinates.net/api**: This URL is utilized to fetch latitude and longitude coordinates for Santa Barbara, California, to enhance geographical analysis in the project."
         )
+    elif page == "Main App":
+        generate_visualizations(filtered_df)
 
 # Filter dataframe based on user input
 def filter_dataframe(df):
