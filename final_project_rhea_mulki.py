@@ -4,30 +4,29 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import requests
 
-# Function to fetch station information from NOAA API
-def fetch_station_info():
-    # Base URL
-    base_url = 'https://www.ncei.noaa.gov/cdo-web/api/v2/'
-    # Endpoint path
-    endpoint = 'stations'
-    # Construct the full URL
-    url = base_url + endpoint
-    # Token
-    token = 'hcFWFYHSzzvsAMdiJbuiuRkIzoKGYlZz'
-    # Request headers
-    headers = {'token': token}
-    # Make the request
-    response = requests.get(url, headers=headers)
-    # Check the response
+# Function to fetch latitude and longitude for Santa Barbara
+def fetch_santa_barbara_coordinates():
+    # URL of the API endpoint
+    url = "https://www.gps-coordinates.net/api"
+    # Identifier for Santa Barbara
+    identifier = "santabarbara"
+    # Construct the full URL with the identifier
+    full_url = f"{url}/{identifier}"
+    # Send an HTTP GET request to the API
+    response = requests.get(full_url)
+    # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Request was successful, handle the response data
+        # Parse the JSON response
         data = response.json()
-        stations_df = pd.DataFrame(data['results'])  # Convert the JSON data to a DataFrame
-        return stations_df
+        # Extract latitude and longitude from the response
+        latitude = data.get('latitude')
+        longitude = data.get('longitude')
+        # Return latitude and longitude
+        return latitude, longitude
     else:
-        # Request failed, handle the error
-        st.error('Failed to fetch station information. Status code: {}'.format(response.status_code))
-        return None
+        # Request was not successful, print an error message
+        st.error(f"Failed to fetch coordinates for Santa Barbara. Status code: {response.status_code}")
+        return None, None
 
 # Load the datasets
 df = pd.read_csv("images.csv")
@@ -67,12 +66,18 @@ for level, values in taxonomy_filters.items():
 filtered_df = filtered_df[(filtered_df['index'] >= index_range[0]) & (filtered_df['index'] <= index_range[1])]
 
 # Show the filtered data
-st.write("Filtered Data:")
+st.title("Images Table:")
 st.write(filtered_df)
 
 # Display deployments table
 st.title("Deployments Table")
 st.write(deployments_df)
+
+# Fetch and display latitude and longitude for Santa Barbara
+st.subheader("Santa Barbara Coordinates")
+latitude, longitude = fetch_santa_barbara_coordinates()
+if latitude is not None and longitude is not None:
+    st.write(f"Latitude: {latitude}, Longitude: {longitude}")
 
 # Visualizations
 st.title("Visualizations")
@@ -95,10 +100,12 @@ if not filtered_df.empty:
     plt.ylabel("Count")
     st.pyplot(plt)
 
-    # Map of Observations (Assuming latitude and longitude columns are available)
-    if 'latitude' in filtered_df.columns and 'longitude' in filtered_df.columns:
-        st.subheader("Map of Observations")
-        st.map(filtered_df[['latitude', 'longitude']])
+    # Map of Observations using latitude and longitude from deployments.csv
+    st.subheader("Map of Observations")
+    if 'latitude' in deployments_df.columns and 'longitude' in deployments_df.columns:
+        st.map(deployments_df[['latitude', 'longitude']])
+    else:
+        st.warning("Latitude and longitude columns not found in deployments.csv")
 
     # Pie Chart of Taxonomic Classification
     st.subheader("Taxonomic Classification")
@@ -109,9 +116,3 @@ if not filtered_df.empty:
         plt.axis('equal')
         plt.title(f"{level.capitalize()} Distribution")
         st.pyplot(plt)
-
-# Display station information
-station_df = fetch_station_info()
-if station_df is not None:
-    st.title("Station Information")
-    st.write(station_df)
