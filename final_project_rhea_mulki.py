@@ -97,6 +97,27 @@ if not filtered_df.empty:
     plt.ylabel("Count")
     st.pyplot(plt)
 
+    # Bar Chart of Class Distribution
+    st.subheader("Class Distribution")
+    class_counts = filtered_df['class'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=class_counts.index, y=class_counts.values, palette='muted')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Class")
+    plt.ylabel("Count")
+    st.pyplot(plt)
+
+    # Bar Chart of Common Name Distribution
+    st.subheader("Common Name Distribution")
+    common_name_counts = filtered_df['common_name'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=common_name_counts.index, y=common_name_counts.values, palette='pastel')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Common Name")
+    plt.ylabel("Count")
+    st.pyplot(plt)
+
+
     # Histogram of Timestamps
     st.subheader("Timestamp Distribution")
     plt.figure(figsize=(10, 6))
@@ -121,5 +142,3 @@ if not filtered_df.empty:
         plt.axis('equal')
         plt.title(f"{level.capitalize()} Distribution")
         st.pyplot(plt)
-
-
