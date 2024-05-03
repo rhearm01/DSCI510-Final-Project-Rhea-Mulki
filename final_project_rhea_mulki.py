@@ -111,10 +111,10 @@ def display_research_questions():
                 
 2. **What did you Discover/what were your conclusions?**  
     **Conclusions:**  
-    a. Most commonly observed classes of species are Mammalia, Aves, and Reptilia.  
-    b. Within Mammalia, the most common orders are Carnivore, Cetartiodactyla, and Rodentia. Within Aves, the most common orders are Charadriiformes, Pelecaniformes, and Cathartiformes. Reptiles observed belong to the Squamata order.  
-    c. The most common mammals observed include Coyote, Wild Boar, and Mule Deer. The most common birds observed include Glaucous-winged Gull, California Gull, and Turkey Vulture. Reptiles observed include Western Fence Lizard and Common Gartersnake.  
-    d. Human presence was also captured by the cameras.  
+    - Most commonly observed classes of species are Mammalia, Aves, and Reptilia.  
+    - Within Mammalia, the most common orders are Carnivore, Cetartiodactyla, and Rodentia. Within Aves, the most common orders are Charadriiformes, Pelecaniformes, and Cathartiformes. Reptiles observed belong to the Squamata order.  
+    - The most common mammals observed include Coyote, Wild Boar, and Mule Deer. The most common birds observed include Glaucous-winged Gull, California Gull, and Turkey Vulture. Reptiles observed include Western Fence Lizard and Common Gartersnake.  
+    - Human presence was also captured by the cameras.  
     Original assumption was that the most common orders would be Mammalia, Aves, and Reptilia, and this assumption is confirmed after analysis.
 
 3. **What difficulties did you have in completing the project?**  
