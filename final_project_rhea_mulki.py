@@ -42,6 +42,12 @@ df.dropna(subset=['timestamp'], inplace=True)
 # Create a new column to represent the index
 df['index'] = df.index
 
+# Project Title
+st.sidebar.title("Coastal Connections: Tracking Wildlife on the California Coast")
+
+# Name
+st.sidebar.write("Rhea Ranjit Mulki")
+
 # Sidebar options
 st.sidebar.title("Filter Options")
 species_name = st.sidebar.text_input("Enter Species Name (optional):")
@@ -107,7 +113,6 @@ if not filtered_df.empty:
     plt.ylabel("Count")
     st.pyplot(plt)
 
-
     # Bar Chart of Common Name Distribution
     st.subheader("Common Name Distribution")
     common_name_counts = filtered_df['common_name'].value_counts()
@@ -117,7 +122,6 @@ if not filtered_df.empty:
     plt.xlabel("Common Name")
     plt.ylabel("Count")
     st.pyplot(plt)
-
 
     # Histogram of Timestamps
     st.subheader("Timestamp Distribution")
@@ -143,3 +147,82 @@ if not filtered_df.empty:
         plt.axis('equal')
         plt.title(f"{level.capitalize()} Distribution")
         st.pyplot(plt)
+
+# Project Overview and Conclusions
+st.sidebar.title("Project Overview & Conclusions")
+st.sidebar.write(
+    "Objective: Investigating species diversity and richness in coastal habitats through camera trap observations and analyzing the influence of environmental variables, such as climate and habitat characteristics, on wildlife distribution patterns.\n"
+    "\nConclusions:\n"
+    "1. Most commonly observed classes of species are mammalia, aves, and reptilia.\n"
+    "2. Within mammalia, the most common orders are carnivore, cetartiodactyla, and rodentia. "
+    "Within aves, the most common orders are charadriiformes, pelecaniformes, and cathartiformes. "
+    "Reptiles observed belong to the squamata order.\n"
+    "3. The most common mammals observed include coyote, wild boar, and mule deer. "
+    "The most common birds observed include Glaucous-winged gull, California gull, and turkey vulture. "
+    "Reptiles observed include Western fence lizard and common gartersnake.\n"
+    "4. Human presence was also captured by the cameras."
+)
+
+# Challenges Faced
+st.sidebar.title("Challenges Faced")
+st.sidebar.write(
+    "During the project, several challenges were encountered, including:\n"
+    "- Difficulty in capturing specific climate and weather data for the given timestamps in the wildlife observation dataset.\n"
+    "- Limited availability of environmental data for establishing relationships between wildlife behavior and habitat characteristics.\n"
+    "- As a result of difficulty faced in capturing specific climate and weather data, settled for Santa Barbara County's average temperature data due to closeness in proximity to coordinates of observed wildlife in the dataset.\n"
+    "- Learning and applying web scraping techniques (e.g., BeautifulSoup and HTML parsing) for data acquisition."
+)
+
+# Desired Skills for Improvement
+st.sidebar.title("Desired Skills for Improvement")
+st.sidebar.write(
+    "While working on the project, the following skills were identified as areas for improvement:\n"
+    "- Enhanced proficiency in Python programming, particularly in data manipulation, analysis, and visualization.\n"
+    "- Improved understanding of web scraping and API usage for data acquisition from diverse sources.\n"
+    "- Further development of statistical and analytical skills for advanced data interpretation and modeling."
+)
+
+# Future Expansion Plans
+st.sidebar.title("Future Expansion Plans")
+st.sidebar.write(
+    "In the future, the project could be expanded or augmented in the following ways:\n"
+    "- Focus on acquiring specific weather and climate data to enhance the analysis of wildlife habitat relationships.\n"
+    "- Incorporate advanced machine learning techniques for predictive modeling and species distribution mapping.\n"
+    "- Collaborate with environmental agencies and organizations to access additional datasets and conduct comprehensive studies."
+)
+
+# Dataset Descriptions
+st.sidebar.title("Dataset Descriptions")
+st.sidebar.write(
+    "1. **images.csv**: Contains wildlife observation data obtained from camera traps, including species information, timestamps, and behavioral observations.\n"
+    "2. **deployments.csv**: Provides details about camera trap deployments, such as location coordinates, deployment dates, and environmental conditions.\n"
+    "3. **data.csv**: Contains average temperature data for Santa Barbara County, CA, for the period April to March, for the years 2022 till 2024.\n"
+)
+
+# Visualizations Explanation
+st.sidebar.title("Visualizations Explanation")
+st.sidebar.write(
+    "1. **Species Distribution**: This bar chart shows the distribution of different species observed in the wildlife camera trap data. "
+    "It helps in understanding the relative abundance of various species in the study area.\n"
+    "2. **Class Distribution**: This bar chart illustrates the distribution of species across different taxonomic classes, "
+    "such as mammals, birds, and reptiles. It provides insights into the overall composition of wildlife in the dataset.\n"
+    "3. **Common Name Distribution**: This bar chart displays the distribution of species based on their common names. "
+    "It offers a more familiar perspective on the observed wildlife, highlighting frequently encountered species.\n"
+    "4. **Timestamp Distribution**: This histogram depicts the distribution of observations over time. It allows for the "
+    "identification of temporal patterns in wildlife activity and can reveal peak periods of species presence.\n"
+    "5. **Map of Observations**: This interactive map visualizes the spatial distribution of camera trap deployments. "
+    "It enables users to explore the geographic locations of wildlife observations and identify hotspot areas.\n"
+    "6. **Taxonomic Classification**: These pie charts represent the taxonomic classification of observed species at different levels, "
+    "such as class, order, family, genus, and species. They provide a hierarchical view of species diversity in the dataset."
+)
+
+# Interactivity Explanation
+st.sidebar.title("Interactivity Explanation")
+st.sidebar.write(
+    "The Streamlit app provides various interactive features to explore the wildlife camera trap data:\n"
+    "- **Filter Options**: Users can filter the dataset based on species name and taxonomic levels (class, order, family, genus, species).\n"
+    "- **Index Range Slider**: Allows users to select a specific range of indices to display rows from the images table, facilitating "
+    "focused exploration of the dataset.\n"
+    "- **Sidebar Information**: Provides additional context and explanations about the project overview, conclusions, challenges faced, "
+    "desired skills for improvement, future expansion plans, dataset descriptions, and visualizations."
+)
