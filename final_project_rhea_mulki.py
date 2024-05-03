@@ -87,6 +87,16 @@ st.write(temperature_df)  # New: Display temperature data from data.csv
 # Visualizations
 st.title("Visualizations")
 if not filtered_df.empty:
+    # Bar Chart of Class Distribution
+    st.subheader("Class Distribution")
+    class_counts = filtered_df['class'].value_counts()
+    plt.figure(figsize=(10, 6))
+    sns.barplot(x=class_counts.index, y=class_counts.values, palette='muted')
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Class")
+    plt.ylabel("Count")
+    st.pyplot(plt)
+
     # Bar Chart of Species Distribution
     st.subheader("Species Distribution")
     species_counts = filtered_df['species'].value_counts()
@@ -97,15 +107,6 @@ if not filtered_df.empty:
     plt.ylabel("Count")
     st.pyplot(plt)
 
-    # Bar Chart of Class Distribution
-    st.subheader("Class Distribution")
-    class_counts = filtered_df['class'].value_counts()
-    plt.figure(figsize=(10, 6))
-    sns.barplot(x=class_counts.index, y=class_counts.values, palette='muted')
-    plt.xticks(rotation=45, ha='right')
-    plt.xlabel("Class")
-    plt.ylabel("Count")
-    st.pyplot(plt)
 
     # Bar Chart of Common Name Distribution
     st.subheader("Common Name Distribution")
