@@ -54,7 +54,7 @@ index_min = df['index'].min()
 index_max = df['index'].max()
 
 # Slider for index range
-index_range = st.sidebar.slider("Select Index Range:", index_min, index_max, (index_min, index_max))
+index_range = st.sidebar.slider("Select Index Range (Images Table):", index_min, index_max, (index_min, index_max))
 
 # Filter the dataset based on user inputs
 filtered_df = df.copy()
@@ -66,7 +66,7 @@ for level, values in taxonomy_filters.items():
 filtered_df = filtered_df[(filtered_df['index'] >= index_range[0]) & (filtered_df['index'] <= index_range[1])]
 
 # Show the filtered data
-st.title("Images Table:")
+st.title("Images Table")
 st.write(filtered_df)
 
 # Display deployments table
