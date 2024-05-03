@@ -169,8 +169,8 @@ def page_selection(filtered_df):
     - Sidebar Information: Provides additional context and explanations about the project overview, conclusions, challenges faced, desired skills for improvement, future expansion plans, dataset descriptions, and visualizations.  
 
     **Visualizations:**  
-    - Species Distribution: This bar chart shows the distribution of different species observed in the wildlife camera trap data. It helps in understanding the relative abundance of various species in the study area.  
     - Class Distribution: This bar chart illustrates the distribution of species across different taxonomic classes, such as mammals, birds, and reptiles. It provides insights into the overall composition of wildlife in the dataset.  
+    - Species Distribution: This bar chart shows the distribution of different species observed in the wildlife camera trap data. It helps in understanding the relative abundance of various species in the study area.  
     - Common Name Distribution: This bar chart displays the distribution of species based on their common names. It offers a more familiar perspective on the observed wildlife, highlighting frequently encountered species.  
     - Timestamp Distribution: This histogram depicts the distribution of observations over time. It allows for the identification of temporal patterns in wildlife activity and can reveal peak periods of species presence.  
     - Map of Observations: This interactive map visualizes the spatial distribution of camera trap deployments. It enables users to explore the geographic locations of wildlife observations and identify hotspot areas.  
