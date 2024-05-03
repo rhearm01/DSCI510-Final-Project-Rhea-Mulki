@@ -31,6 +31,7 @@ def fetch_santa_barbara_coordinates():
 # Load the datasets
 df = pd.read_csv("images.csv")
 deployments_df = pd.read_csv("deployments.csv")
+temperature_df = pd.read_csv("data.csv")  # New: Read temperature data from data.csv
 
 # Convert timestamp to datetime with error handling
 df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
@@ -79,6 +80,10 @@ latitude, longitude = fetch_santa_barbara_coordinates()
 if latitude is not None and longitude is not None:
     st.write(f"Latitude: {latitude}, Longitude: {longitude}")
 
+# Display temperature data
+st.title("Temperature Data")
+st.write(temperature_df)  # New: Display temperature data from data.csv
+
 # Visualizations
 st.title("Visualizations")
 if not filtered_df.empty:
@@ -116,3 +121,5 @@ if not filtered_df.empty:
         plt.axis('equal')
         plt.title(f"{level.capitalize()} Distribution")
         st.pyplot(plt)
+
+
