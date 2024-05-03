@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import requests
-import folium
 
 # Function to fetch latitude and longitude for Santa Barbara
 def fetch_santa_barbara_coordinates():
@@ -104,10 +103,7 @@ if not filtered_df.empty:
     # Map of Observations using latitude and longitude from deployments.csv
     st.subheader("Map of Observations")
     if 'latitude' in deployments_df.columns and 'longitude' in deployments_df.columns:
-        m = folium.Map(location=[34, -120], zoom_start=5)
-        for index, row in deployments_df.iterrows():
-            folium.Marker([row['latitude'], row['longitude']], popup=f"Lat: {row['latitude']}, Long: {row['longitude']}").add_to(m)
-        st.write(m)
+        st.map(deployments_df[['latitude', 'longitude']])
     else:
         st.warning("Latitude and longitude columns not found in deployments.csv")
 
