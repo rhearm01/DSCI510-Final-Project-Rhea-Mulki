@@ -1,0 +1,41 @@
+project_id,deployment_id,longitude,latitude,start_date,end_date,bait_type,bait_description,feature_type,feature_type_methodology,camera_id,camera_name,quiet_period,camera_functioning,sensor_height,height_other,sensor_orientation,orientation_other,plot_treatment,plot_treatment_description,detection_distance,subproject_name,subproject_design,event_name,event_description,event_type,recorded_by,fuzzed
+2004085,10458a9e-2b87-430c-b7d8-b51f057b3093,-120.4,34.4,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041552,DANGER8,0,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,TRUE
+2004085,Saucito,-120.5670403,34.5506971,5/1/2022 0:00,1/1/2023 0:00,None,,Trail game,,2041566,VANDY4,60,Camera Hardware Failure,Knee height,,Varies,,,,,VSFB,,,,,,FALSE
+2004085,ad98ca99-6410-423e-aa92-602a878dcfdf,-120.4,34.4,5/1/2022 0:00,5/1/2024 0:00,None,,Trail game,,2041572,VANDY4,30,Camera Functioning,Knee height,,Pointed Downward,,,,,VSFB,,,,,,TRUE
+2004085,North Beach Fort Cam,-120.474388,34.470065,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041554,DANGER6,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,57449dd5-d7ee-455d-b72c-905e1a37da20,-120.4,34.4,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041564,VANDY20,10,Camera Hardware Failure,Knee height,,Varies,,,,,VSFB,,,,,,TRUE
+2004085,North Beach Canyon Cam,-120.4722628,34.4601222,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041570,VANDY17,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Jalama Cam,-120.4991,34.503762,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041574,DANGER30,10,Camera Hardware Failure,Knee height,,Varies,,,,,JBCP,,,,,,FALSE
+2004085,Damsite Creek Cam,-120.4264076,34.4503411,5/1/2022 0:00,5/1/2023 0:00,None,,Water source,,2041550,DANGER7,60,Camera Functioning,Knee height,,Parallel,,,,,JLDP,,,,,,FALSE
+2004085,Old Fencepost Cam April 2022,-120.538155,34.538088,4/20/2022 0:00,5/10/2023 0:00,None,,None,,2041559,VANDY15,30,Camera Hardware Failure,Knee height,,Varies,,,,,VSFB,,,,,,FALSE
+2004085,Short Canyon Cam,-120.531503,34.534763,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041561,VANDY18,10,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,Zilz,FALSE
+2004085,seawall cam,-120.4781883,34.4794098,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041571,VANDY3,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Percos Post March 2022,-120.431493,34.451174,3/13/2022 0:00,4/2/2022 0:00,None,,Trail game,,2041549,5,30,Camera Hardware Failure,Knee height,,Parallel,,,,,JLDP,,,,,,FALSE
+2004085,Auggies November,-120.36356,34.4576,11/2/2023 0:00,11/16/2023 0:00,None,,Trail game,,2093353,Auggies Cam,30,Camera Functioning,Knee height,,Pointed Downward,,,,,HROA,,,,,,FALSE
+2004085,Water Canyon Cam,-120.5601141,34.5455563,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041568,VANDY12,10,Camera Hardware Failure,Knee height,,Varies,,,,,VSFB,,,,,,FALSE
+2004085,Not Water Canyon Cam,-120.5591257,34.5447124,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041567,VANDY8,10,Camera Hardware Failure,Knee height,,Varies,,,,,VSFB,,,,,,FALSE
+2004085,Cove Cam,-120.4566805,34.4446375,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041557,DANGER7,10,Camera Hardware Failure,Knee height,,Varies,,,,,JLDP,,,,,,FALSE
+2004085,Morida Cam,-120.556447,34.543781,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041562,VANDY18,10,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,Zilz,FALSE
+2004085,RIZ Cam Backup,-120.5523943,34.5412739,5/1/2022 0:00,1/1/2023 0:00,None,,Trail game,,2041565,VANDY10,30,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,,FALSE
+2004085,Cojo Gate Cam,-120.497963,34.501155,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041577,DANGER33,10,Camera Hardware Failure,Knee height,,Varies,,,,,JBCP,,,,,,FALSE
+2004085,Percos Log Cam,-120.43358,34.451435,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041548,DANGER5,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Jolluru Cam,-120.534867,34.536237,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041560,VANDY16,10,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,Zilz,FALSE
+2004085,Boathouse May - July 2022,-120.6087228,34.5568009,5/10/2022 0:00,6/3/2022 0:00,None,,Trail game,,2041572,VANDY4,5,Camera Functioning,Knee height,,Pointed Downward,,,,,VSFB,,,,,,FALSE
+2004085,Percos Post Cam,-120.431493,34.451174,5/1/2022 0:00,5/1/2023 0:00,None,,Trail game,,2041548,DANGER5,30,Camera Hardware Failure,Knee height,,Parallel,,,,,JLDP,,,,,,FALSE
+2004085,Big Cojo Cam,-120.45277,34.446176,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041547,DANGER3,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Caliente October,-120.25228,34.4685,9/25/2023 0:00,11/1/2023 0:00,None,,Water source,,2093314,Caliente Cam,30,Camera Functioning,Knee height,,Parallel,,,,,HROA,,,,,,FALSE
+2004085,Boneyard 09/07/2022,-120.47248,34.456208,9/7/2022 0:00,10/1/2022 0:00,None,,Trail game,,2089815,DANGER30,60,Camera Hardware Failure,Chest height,,Pointed Downward,,,,,JLDP,,,,,,FALSE
+2004085,RIZ Cam,-120.5523943,34.5412739,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041563,VANDY6,10,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,Zilz,FALSE
+2004085,Black Canyon Cam,-120.475431,34.473854,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041556,DANGER12,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Percos Driftwood Cam,-120.444986,34.451459,5/1/2022 0:00,5/1/2023 0:00,None,,Trail game,,2041545,DANGER1,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,,FALSE
+2004085,Govies Cliff Cam,-120.452425,34.442691,5/1/2022 0:00,5/1/2023 0:00,None,,Trail game,,2041551,DANGER5_2,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,,FALSE
+2004085,Percos Beach Cam,-120.436957,34.451883,5/1/2022 0:00,5/1/2023 0:00,None,,Trail game,,2041553,DANGER13,60,Camera Functioning,Other,Varies knee to chest,Varies,,,,,JLDP,,,,,,FALSE
+2004085,Jalama 2 Cam,-120.498887,34.503387,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041575,DANGER31,10,Camera Functioning,Knee height,,Varies,,,,,JBCP,,,,,,FALSE
+2004085,Wasp Aug-Nov,-120.32759,34.4634,8/16/2023 0:00,11/28/2023 0:00,None,,Water source,,2093355,Wasp Cam,30,Camera Functioning,Knee height,,Parallel,,,,,HROA,,,,,,FALSE
+2004085,Percos Boat Cam,-120.445674,34.450395,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041546,2,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Big Cojo Closeups Only,-120.45277,34.446176,6/18/2022 0:00,7/30/2022 0:00,None,,Other,Ice Plant in front of camera,2041547,DANGER3,60,Camera Hardware Failure,Knee height,,Pointed Downward,,,,,JLDP,,,,,,FALSE
+2004085,Cojalama Cam,-120.498428,34.502267,5/1/2022 0:00,1/1/2023 0:00,None,,None,,2041576,DANGER32,10,Camera Hardware Failure,Knee height,,Varies,,,,,JBCP,,,,,,FALSE
+2004085,Sudden Canyon Cam,-120.543687,34.540297,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041558,VANDY2,10,Camera Functioning,Knee height,,Varies,,,,,VSFB,,,,,Zilz,FALSE
+2004085,Wood Canyon Cam,-120.4418489,34.4520732,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041573,DANGER11,10,Camera Functioning,Knee height,,Varies,,,,,JLDP,,,,,Zilz,FALSE
+2004085,Gato October,-120.37973,34.4571,10/20/2023 0:00,11/2/2023 0:00,None,,Water source,,2093320,Gato Cam,30,Camera Functioning,Knee height,,Parallel,,,,,HROA,,,,,,FALSE
+2004085,Cojo Canyon Cam,-120.49685,34.498108,5/1/2022 0:00,5/1/2023 0:00,None,,None,,2041578,DANGER34,10,Camera Hardware Failure,Knee height,,Varies,,,,,JBCP,,,,,,FALSE
