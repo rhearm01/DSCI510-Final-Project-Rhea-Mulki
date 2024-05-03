@@ -29,8 +29,9 @@ def fetch_station_info():
         st.error('Failed to fetch station information. Status code: {}'.format(response.status_code))
         return None
 
-# Load the dataset
+# Load the datasets
 df = pd.read_csv("images.csv")
+deployments_df = pd.read_csv("deployments.csv")
 
 # Convert timestamp to datetime with error handling
 df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
@@ -68,6 +69,10 @@ filtered_df = filtered_df[(filtered_df['index'] >= index_range[0]) & (filtered_d
 # Show the filtered data
 st.write("Filtered Data:")
 st.write(filtered_df)
+
+# Display deployments table
+st.title("Deployments Table")
+st.write(deployments_df)
 
 # Visualizations
 st.title("Visualizations")
