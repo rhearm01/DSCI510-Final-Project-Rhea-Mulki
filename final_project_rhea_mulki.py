@@ -122,6 +122,7 @@ def display_research_questions():
     - Difficulty in capturing specific climate and weather data for the given timestamps in the wildlife observation dataset.  
     - Limited availability of environmental data for establishing relationships between wildlife behavior and habitat characteristics.  
     - Settled for Santa Barbara County's average temperature data due to the closeness in proximity to coordinates of observed wildlife in the dataset, as capturing specific climate and weather data was challenging.  
+    - Difficulty obtaining environmental data as an API or JSON.
     - Learning and applying web scraping techniques (e.g., BeautifulSoup and HTML parsing) for data acquisition.
 
 4. **What skills did you wish you had while you were doing the project?**  
